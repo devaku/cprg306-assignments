@@ -2,10 +2,10 @@
     "version": "0.2.0",
     "compounds": [
         {
-            "name": "Next.js + Chrome",
+            "name": "Next.js + Browser",
             "configurations": [
                 "Run Next.js",
-                "Open Chrome Browser"
+                "Open Chrome"
             ]
         }
     ],
@@ -18,13 +18,13 @@
             "command": "npm run dev"
         },
         {
-            "name": "Open Chrome Browser",
+            "name": "Open Chrome",
             "type": "chrome",
             "request": "launch",
             "url": "http://localhost:3000",
         },
         {
-            "name": "Next.js: debug client-side (Firefox)",
+            "name": "Open Firefox",
             "type": "firefox",
             "request": "launch",
             "url": "http://localhost:3000",
