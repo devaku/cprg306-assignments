@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export default function NewItem() {
 	const [name, setName] = useState('');
-	const [quantity, setQuantity] = useState(0);
+	const [quantity, setQuantity] = useState(1);
 	const [category, setCategory] = useState('Produce');
 
 	function handleSubmit(e) {
@@ -18,14 +18,14 @@ export default function NewItem() {
 		alert('Item object: ' + JSON.stringify(item));
 
 		setName('');
-		setQuantity(0);
+		setQuantity(1);
 		setCategory('Produce');
 	}
 
 	function handleOnClick(e) {
 		e.preventDefault();
 		if (e.target.name == 'decrement') {
-			if (quantity <= 0) {
+			if (quantity <= 1) {
 				// Do nothing
 				return;
 			} else {
@@ -65,7 +65,7 @@ export default function NewItem() {
 								onClick={handleOnClick}
 								name="decrement"
 								className={
-									(quantity <= 0
+									(quantity <= 1
 										? 'bg-gray-500 cursor-not-allowed '
 										: 'bg-red-900 cursor-pointer ') +
 									'w-full rounded-md '
