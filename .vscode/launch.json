@@ -1,17 +1,27 @@
 {
     "version": "0.2.0",
+    "compounds": [
+        {
+            "name": "Next.js + Chrome",
+            "configurations": [
+                "Run Next.js",
+                "Open Chrome Browser"
+            ]
+        }
+    ],
     "configurations": [
         {
-            "name": "Next.js: debug server-side",
+            "name": "Run Next.js",
             "type": "node-terminal",
             "request": "launch",
+            "cwd": "${workspaceFolder}\\app",
             "command": "npm run dev"
         },
         {
-            "name": "Next.js: debug client-side",
+            "name": "Open Chrome Browser",
             "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:3000"
+            "url": "http://localhost:3000",
         },
         {
             "name": "Next.js: debug client-side (Firefox)",
