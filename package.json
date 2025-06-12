@@ -11,6 +11,8 @@
 	},
 	"dependencies": {
 		"caniuse-lite": "^1.0.30001717",
+		"encoding": "^0.1.13",
+		"firebase": "^11.9.1",
 		"next": "15.3.2",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0"
