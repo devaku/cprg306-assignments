@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Ingredient from './ingredient';
-import * as mealApi from '../_services/mealapi';
+import * as mealApi from '../../_services/mealapi';
 
 export default function MealCard({ meal_obj, meal_name }) {
 	const [showIngredient, setShowIngredient] = useState(false);

@@ -35,12 +35,6 @@ export function AuthContextProvider({ children }) {
 		return signOut(auth);
 	}
 
-	function DergFunction(e) {
-		console.log(e);
-		console.log(e.target.value);
-		console.log('I AM A DRAGON');
-	}
-
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
 			setUser(currentUser);
@@ -49,9 +43,7 @@ export function AuthContextProvider({ children }) {
 	}, [user]);
 
 	return (
-		<AuthContext.Provider
-			value={{ user, gitHubSignIn, firebaseSignOut, DergFunction }}
-		>
+		<AuthContext.Provider value={{ user, gitHubSignIn, firebaseSignOut }}>
 			{/* Children is a special prop that stands in for every component that 
             is wrapped by the user created context */}
 			{children}

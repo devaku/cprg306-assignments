@@ -1,27 +1,30 @@
 'use client';
 
+import { redirect, useRouter } from 'next/navigation';
+
 // Import the useUserAuth hook
 import { useUserAuth } from './_utils/auth-context';
+import { useEffect } from 'react';
 
 export default function Page() {
 	// Use the useUserAuth hook to get the user object and the login and logout functions
-	const { user, gitHubSignIn, firebaseSignOut, DergFunction } = useUserAuth();
+	const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
+	const router = useRouter();
+
+	useEffect(() => {
+		if (user) {
+			router.push('/week-9/shopping-list');
+		}
+	});
 
 	async function handleSigninClick(e) {
 		// Sign in to Firebase with GitHub authentication
 		try {
 			await gitHubSignIn();
+			// router.push('/week-9/shopping-list');
+			redirect('/week-9/shopping-list');
 		} catch (e) {
 			// {"code":"auth/popup-closed-by-user","customData":{},"name":"FirebaseError"}
-			console.log(JSON.stringify(e));
-		}
-	}
-
-	async function handleLogoutClick(e) {
-		try {
-			// Sign out of Firebase
-			await firebaseSignOut();
-		} catch (e) {
 			console.log(JSON.stringify(e));
 		}
 	}
@@ -39,12 +42,6 @@ export default function Page() {
 					className="bg-sky-700 p-1 rounded"
 				>
 					LOGIN IN TO GITHUB
-				</button>
-				<button
-					onClick={handleLogoutClick}
-					className="bg-red-800 p-1 rounded"
-				>
-					Logout
 				</button>
 			</div>
 		</div>
