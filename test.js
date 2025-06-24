@@ -1,5 +1,9 @@
-let array = [];
-array.push(1);
-array.push(2);
+console.log('RUNNING TEST');
 
-console.log(array);
+let mystring = '1234abc 🥛🍞🥚🍌🥦🍗';
+// 🥛🍞🥚🍌🥦🍗
+
+const regex = /([A-Za-z0-9]+)/g;
+let found = mystring.charAt(mystring.length - 1).match(regex);
+console.log(found);
+console.log('EXIT');
